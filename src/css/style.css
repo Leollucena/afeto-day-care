@@ -1,0 +1,251 @@
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: grid;
+    grid-template-areas:"header header header header"
+                         "hero hero hero hero"
+                         "about about about about"
+                         "trabalho trabalho trabalho trabalho"
+                         "location location location location"
+                         "footer footer footer footer"
+                         ;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.header{
+    grid-area: header;
+    background-color:#fff;
+}
+
+.header .header-container{
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+}
+
+.header h1{
+    font-size: 3rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.header a:hover h1{
+    color: rgb(250, 82, 110);
+}
+
+.hero{
+    grid-area: hero;
+    height: 89vh;
+    background: url('../images/desing-agora-vai-mesmo.png') center center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero h2{
+    
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.hero:after{
+    content: url('../images/seta_preta.png');
+    position: absolute;
+    height: 35px;
+    bottom: 40px;
+    align-items: center;
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes downarrow{
+    0%{-webkit-transform: translateY(0); opacity: 0.4;}
+    100%{-webkit-transform: translateY(0.4em); opacity: 0.9;}
+}
+
+@media(max-width:425px){
+    .hero{height: 60vh;}
+    .hero h2 {font-size: 1rem};
+}
+
+.about{
+    grid-area: about;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+    max-width: var(--max-width-size);
+    margin: 0 auto;
+}
+
+.about .item{
+    padding: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.about .item h3{
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.about .item p{
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 30px 0;
+}
+
+.about .item .btn-know-more{
+    font-size: 1.6rem;
+    align-self: flex-start;
+}
+
+.about .item .btn-know-more:hover{
+    font-weight: 700;
+}
+.about.image{
+height: 100%;
+width: 100%;
+}
+
+.about .image.right{
+    background: url('../images/AirBrush_20240331104828.jpg')center 
+    center no-repeat;
+    background-size:cover;
+}
+
+.about .image.left{
+    background: url('../images/fotodeles.jpg')center 
+    center no-repeat;
+    background-size:cover;
+}
+
+@media (max-width:425px){
+    .about .item{
+        text-align: center;
+    }
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+.trabalho{
+   grid-area: trabalho;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   background-color: rgb(250, 82, 110);
+   text-align: center;
+}
+
+.trabalho .trabalho-info{
+    padding: 70px 20px;
+}
+
+.trabalho .trabalho-info h3{
+    justify-content: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.trabalho-info:hover h3{
+    color: #fff;
+}
+
+.trabalho .trabalho-info p{
+    font-size: 2.8rem;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 20px auto 0;
+    line-height: 25px;
+}
+
+
+.location{
+    grid-area: location;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.location img{
+    height: 100%;
+    transition: 0.3s;
+}
+
+.location a:hover img{
+    opacity: 0.8;
+}
+
+@media(max-width: 768px){
+    .location{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+}
+
+@media(max-width: 425px){
+    .location{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+.footer{
+    grid-area: footer;
+    background-color: gray;
+    padding: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items:center;
+}
+
+.footer nav ul li a{
+    font-size: 2.5rem;
+    font-weight: 450;
+    font-family: "roboto", sans-serif;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.footer:hover{
+    color:rgb(250, 82, 110);;
+}
+footer ul li{
+    margin: 10px;
+}
+
+.footer .informacoes{
+    font-size: 2.5rem;
+    font-family: 'roboto', sans-serif;
+    color: #fff;
+}
+
+footer div address{
+    font-weight: 400;
+}
+
+@media (max-width:768px){
+    .footer{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+@media(max-width: 425px){
+    .location{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
